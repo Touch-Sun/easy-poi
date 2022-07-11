@@ -1,4 +1,4 @@
-# Easy-poi
+# EasyPOI
 
 ✨ easy-poi - 对POI使用的封装,随着业务的丰富,本仓库的支持更加强大,相信总有一个场景你会用到
 
@@ -33,7 +33,7 @@
 </p>
 
 
-Easy-poi面向Java开发者，让他们在使用Excel摒弃重复的POI业务场景，舒畅的进行开发
+EasyPOI面向Java开发者，让他们在使用Excel摒弃重复的POI业务场景，舒畅的进行开发
 
 ## 目录
 
