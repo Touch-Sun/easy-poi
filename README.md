@@ -65,7 +65,7 @@ EasyPOI面向Java开发者，让他们在使用Excel摒弃重复的POI业务场�
 2. 添加为程序的依赖库文件
 
 ```sh
-git clone https://github.com/Touch-Sun/scorpio.git
+git clone https://github.com/Touch-Sun/easy-poi.git
 ```
 
 ### 文件目录说明
