@@ -7,7 +7,6 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/Touch-Sun/easy-poi)
 ![GitHub issues](https://img.shields.io/github/issues/Touch-Sun/easy-poi)
 ![GitHub Repo stars](https://img.shields.io/github/stars/Touch-Sun/easy-poi)
-![GitHub](https://img.shields.io/github/license/Touch-Sun/easy-poi)
 <!-- ![GitHub watchers](https://img.shields.io/github/watchers/Touch-Sun/scorpio) -->
 
 <!-- PROJECT LOGO -->
