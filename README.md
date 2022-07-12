@@ -13,7 +13,7 @@
 <br />
 
 <p align="center">
-  <a href="https://github.com/Touch-Sun/scorpio">
+  <a href="https://github.com/Touch-Sun/easy-poi">
     <!-- <img src="https://s1.328888.xyz/2022/06/19/0O7RC.png" alt="Logo" width="300" height="300"> -->
     <img style="box-shadow: 1px 1px 10px #6b1839; border-radius: 15px" src="https://s1.328888.xyz/2022/07/11/L4cX7.png" alt="Logo" width="auto" height="auto">
   </a>
