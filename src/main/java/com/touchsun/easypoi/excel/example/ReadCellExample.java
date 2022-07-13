@@ -1,20 +1,17 @@
-package com.touchsun.easypoi.example;
+package com.touchsun.easypoi.excel.example;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 
 import java.io.*;
 
 /**
  * Apache POI Cell使用示例<br/>
- * 本示例描述了如何使用POI去读取一个单元格,之后重写到文件中
+ * 本示例描述了如何使用POI去读取一个单元格
  *
  * @author Lee
  */
-public class WriteCellExample {
+public class ReadCellExample {
     public static void main(String[] args) {
         // 打开一个Excel文件的输入流
         try(InputStream ins = new FileInputStream("readExample.xls")) {
@@ -28,12 +25,6 @@ public class WriteCellExample {
             Cell cell = row.getCell(0);
             // 输出单元格的值
             System.out.println("cell = " + cell);
-            cell.setCellValue("你好POI,我是被重写后的值");
-            // 打开输出流，进行对Excel文件的重写
-            try(OutputStream os = new FileOutputStream("readExample.xls")) {
-                // workbook 还是原来的对象，此处直接复用进行数据的重写
-                workbook.write(os);
-            }
         } catch (IOException exception) {
             exception.printStackTrace();
         }

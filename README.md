@@ -35,7 +35,7 @@
 </p>
 
 
-EasyPOI面向Java开发者，让他们在使用Excel摒弃重复的POI业务场景，舒畅的进行开发
+EasyPOI面向Java开发者，让他们在使用Java处理Excel、Word、PPT时摒弃重复的POI业务场景，舒畅的进行开发
 
 ## 目录
 

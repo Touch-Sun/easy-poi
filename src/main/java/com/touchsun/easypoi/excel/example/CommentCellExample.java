@@ -1,4 +1,4 @@
-package com.touchsun.easypoi.example;
+package com.touchsun.easypoi.excel.example;
 
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.Cell;
