@@ -1,6 +1,8 @@
 # EasyPOI
 
 ✨ easy-poi - 对POI使用的封装,随着业务的丰富,本仓库的支持更加强大,相信总有一个场景你会用到
+> 简单整理的Apache POI中文用户手册<br/>
+> https://www.yuque.com/docs/share/9fa956f0-9b1f-4cc6-bd79-ec0feb82a6ac?# 《Apache POI [EXCEL篇]》
 
 <!-- PROJECT SHIELDS -->
 
