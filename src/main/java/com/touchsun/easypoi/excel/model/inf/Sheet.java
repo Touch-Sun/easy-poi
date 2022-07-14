@@ -13,6 +13,7 @@ public interface Sheet {
 
     /**
      * 获取当前 Sheet 所在的 Excel
+     *
      * @return Excel对象
      */
     Excel getExcel();
@@ -41,6 +42,7 @@ public interface Sheet {
 
     /**
      * 获取当前 Sheet 的全部行
+     *
      * @return 行对象组成的 List
      */
     List<Row> getRowAll();
@@ -76,6 +78,15 @@ public interface Sheet {
      * 清除当前工作表的所有行（不保留格式）
      */
     void clear();
+
+    /**
+     * 灵活单元格
+     * 将单元格信息强制写入指定行，列
+     * @param row 行
+     * @param col 列
+     * @param cell 单元格信息
+     */
+    void setFlexibleCell(int row, int col, Cell cell);
 
 
 }
