@@ -1,9 +1,8 @@
 package com.touchsun.easypoi.excel.model.inf;
 
-import org.apache.poi.ss.usermodel.Row;
 
 /**
- * Excel中的单元格接口
+ * Excel中的 单元格（Cell）接口
  *
  * @author WangXiang
  * @date 2022/7/14 15:57
@@ -42,26 +41,26 @@ public interface Cell {
     /**
      * 获取单元格所在列的索引
      *
-     * @return Sheet中包含此单元格的列的索引（从零开始）
+     * @return Sheet中包含此单元格的列的索引（从 0 开始）
      */
     int getColumnIndex();
 
     /**
      * 获取单元格所在行的索引
      *
-     * @return Sheet中包含此单元格的行的索引（从零开始）
+     * @return Sheet中包含此单元格的行的索引（从 0 开始）
      */
     int getRowIndex();
 
     /**
      * 置空此单元格数据（不清除格式）
      */
-    void setEmpty();
+    void remove();
 
     /**
-     * 完全清除此单元格内容（清除格式）
+     * 完全清除此单元格（清除格式）
      */
-    void setEmptyAll();
+    void clear();
 
 
 }
