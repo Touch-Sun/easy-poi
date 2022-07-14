@@ -91,6 +91,7 @@ eg:
 - Apache POI
 
 ### 贡献者
+> 仓库不限制贡献者的开发规范，仅需说明工具作用即可
 
 <img src="https://s1.328888.xyz/2022/07/13/L2SDw.png" alt="L2SDw.png" border="0">
 <img src="https://s1.328888.xyz/2022/07/13/L2e1i.png" alt="L2e1i.png" border="0">
