@@ -44,7 +44,7 @@ public interface Row {
     void removeCell(int col);
 
     /**
-     * 删除指定列的单元格（不保留格式）
+     * 清除指定列的单元格（不保留格式）
      *
      * @param col 指定列
      */
@@ -56,7 +56,7 @@ public interface Row {
     void remove();
 
     /**
-     * 删除当前列（不保留格式）
+     * 清除当前列（不保留格式）
      */
     void clear();
 
