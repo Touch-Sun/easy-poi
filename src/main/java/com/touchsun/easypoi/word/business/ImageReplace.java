@@ -3,10 +3,7 @@ package com.touchsun.easypoi.word.business;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.openxml4j.opc.PackagePart;
-import org.apache.poi.xwpf.usermodel.Document;
-import org.apache.poi.xwpf.usermodel.XWPFDocument;
-import org.apache.poi.xwpf.usermodel.XWPFParagraph;
-import org.apache.poi.xwpf.usermodel.XWPFRun;
+import org.apache.poi.xwpf.usermodel.*;
 import org.apache.xmlbeans.XmlException;
 import org.apache.xmlbeans.XmlToken;
 import org.openxmlformats.schemas.drawingml.x2006.main.CTNonVisualDrawingProps;
@@ -17,9 +14,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * 业务场景<br/>
@@ -79,13 +74,13 @@ public class ImageReplace extends Business {
     }
 
     /**
-     * 获取一个Doc文档中所有的图片的ID
+     * 获取一个Doc文档中所有的图片的ID与图片数据的映射
      *
      * @param docx Word文档
-     * @return picIds 列表
+     * @return picIdMap rId -> XWPFPictureData 映射
      */
-    public static List<String> getAllPicIds(XWPFDocument docx) {
-        List<String> picIds = new ArrayList<>();
+    public static Map<String, XWPFPictureData> getPicIdMap(XWPFDocument docx) {
+        Map<String, XWPFPictureData> picIdMap = new HashMap<>();
         List<XWPFParagraph> paragraphs = docx.getParagraphs();
         for (XWPFParagraph paragraph : paragraphs) {
             List<XWPFRun> runs = paragraph.getRuns();
@@ -101,11 +96,13 @@ public class ImageReplace extends Business {
                 Node blipNode = getChildNode(drawingNode, "a:blip");
                 NamedNodeMap blipAttrs = Objects.requireNonNull(blipNode).getAttributes();
                 String rid = blipAttrs.getNamedItem("r:embed").getNodeValue();
-                picIds.add(rid);
+                picIdMap.put(rid, run.getDocument().getPictureDataByID(rid));
             }
         }
-        return picIds;
+        return picIdMap;
     }
+
+
 
     /**
      * 获取一个节点的子节点
