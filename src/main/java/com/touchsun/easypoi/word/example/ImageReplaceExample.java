@@ -2,6 +2,8 @@ package com.touchsun.easypoi.word.example;
 
 
 import com.touchsun.easypoi.word.business.ImageReplace;
+import com.touchsun.easypoi.word.model.entity.DefaultDocx;
+import com.touchsun.easypoi.word.virtual.Docx;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
@@ -27,9 +29,10 @@ public class ImageReplaceExample {
     /** 要替换的备用图片 */
     private static String imgPath = "D:\\backup\\2022\\0712\\bj.jpeg";
 
-    public static void main(String[] args) throws IOException, InvalidFormatException {
+    public static void main(String[] args) throws IOException, InvalidFormatException, IllegalAccessException {
         testReplaceImage();
         testGetAllIdToPicMap();
+        testAbsWord();
     }
 
     /**
@@ -43,6 +46,18 @@ public class ImageReplaceExample {
         ImageReplace.replacePicture("rId6", new FileInputStream(imgPath), docx);
         OutputStream outputStream = new FileOutputStream(newFilePath);
         docx.write(outputStream);
+    }
+
+    /**
+     * 抽象Word测试
+     *
+     * @throws IOException IOException
+     * @throws InvalidFormatException InvalidFormatException
+     * @throws IllegalAccessException IllegalAccessException
+     */
+    public static void testAbsWord() throws IOException, InvalidFormatException, IllegalAccessException {
+        Docx docx = new DefaultDocx(filePath);
+        System.out.println(docx.getAllPictureNodeMap());
     }
 
     /**
