@@ -17,6 +17,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -77,6 +78,34 @@ public class ImageReplace extends Business {
         }
     }
 
+    /**
+     * 获取一个Doc文档中所有的图片的ID
+     *
+     * @param docx Word文档
+     * @return picIds 列表
+     */
+    public static List<String> getAllPicIds(XWPFDocument docx) {
+        List<String> picIds = new ArrayList<>();
+        List<XWPFParagraph> paragraphs = docx.getParagraphs();
+        for (XWPFParagraph paragraph : paragraphs) {
+            List<XWPFRun> runs = paragraph.getRuns();
+            if(CollectionUtils.isNotEmpty(runs)) {
+                XWPFRun run = runs.get(0);
+                Node node = run.getCTR().getDomNode();
+                // drawing 一个绘画的图片
+                Node drawingNode = getChildNode(node, "w:drawing");
+                if (drawingNode == null) {
+                    continue;
+                }
+                // 绘画图片具体引用
+                Node blipNode = getChildNode(drawingNode, "a:blip");
+                NamedNodeMap blipAttrs = Objects.requireNonNull(blipNode).getAttributes();
+                String rid = blipAttrs.getNamedItem("r:embed").getNodeValue();
+                picIds.add(rid);
+            }
+        }
+        return picIds;
+    }
 
     /**
      * 获取一个节点的子节点
